@@ -4,4 +4,10 @@ class ListsController < ApplicationController
 	@assignment_one_pomodoro_estimate = "4 pomodoros"
   end
 
+  def new
+  end
+
+  def create
+  	render plain: params[:list].to_json
+  end
 end
