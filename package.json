@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {},
   "description": "todo-rails-mvc demo application",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "main": "index.js",
   "directories": {
     "test": "test"
