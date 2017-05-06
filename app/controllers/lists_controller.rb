@@ -8,13 +8,17 @@ class ListsController < ApplicationController
   end
 
   def new
+    @list = List.new
   end
 
   def create
   	@list = List.new(list_params)
  
-    @list.save
-    redirect_to @list
+    if @list.save
+      redirect_to @list
+    else
+      render 'new'
+    end
   end
 
   private
