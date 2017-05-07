@@ -9,6 +9,13 @@ class TodosController < ApplicationController
 		redirect_to list_path(@list)
 	end
 
+	def destroy
+		@list = List.find(params[:list_id])
+		@todo = @list.todos.find(params[:id])
+		@todo.destroy
+		redirect_to list_path(@list)
+	end
+
 	private
 		def todo_params
 			params.require(:todo).permit(:description, :pomodoro_estimate, :complete)

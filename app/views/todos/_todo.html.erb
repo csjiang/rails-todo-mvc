@@ -13,4 +13,9 @@
     <strong>Complete:</strong>
     <%= todo.complete %>
   </p>
+  <p>
+    <%= link_to 'Mark Complete (delete)', [todo.list, todo],
+                 method: :delete,
+                 data: { confirm: 'Are you sure?' } %>
+  </p>
 </li>
