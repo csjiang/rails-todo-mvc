@@ -3,5 +3,46 @@
   <%= @list.name %>
 </p>
 
+<h2>To-dos</h2>
+<ul>
+<% @list.todos.each do |todo| %>
+  <li>
+	  <p>
+	    <strong>Description:</strong>
+	    <%= todo.description %>
+	  </p>
+	 
+	  <p>
+	    <strong>Pomodoro estimate:</strong>
+	    <%= todo.pomodoro_estimate %>
+	  </p>  
+
+	  <p>
+	    <strong>Complete:</strong>
+	    <%= todo.complete %>
+	  </p>
+	</li>
+<% end %>
+</ul>
+
+<h2>Add a to-do:</h2>
+<%= form_for([@list, @list.todos.build]) do |f| %>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :pomodoros %><br>
+    <%= f.number_field :pomodoro_estimate %>
+  </p>  
+  <p>
+    <%= f.label :complete %><br>
+    <%= f.check_box :complete %> <br />
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_list_path(@list) %>
 <%= link_to 'Back to all lists', lists_path %>
