@@ -1,0 +1,17 @@
+<%= form_for([@list, @list.todos.build]) do |f| %>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :pomodoros %><br>
+    <%= f.number_field :pomodoro_estimate %>
+  </p>  
+  <p>
+    <%= f.label :complete %><br>
+    <%= f.check_box :complete %> <br />
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
